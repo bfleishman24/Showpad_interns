@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Bands In Town</title>
+</head>
+
+<body>
+
+  <!-- Artist Select Box -->
+  <form id="artist-form">
+
+    <!-- Label for Text Box -->
+    <label for="artist-input">Choose Your Artist</label>
+
+    <!-- Text Input Box -->
+    <input type="text" id="skuInput"><br>
+
+    <!-- Submit Button -->
+    <input id="skubttn" type="submit" value="GO!">
+  </form>
+
+  <!-- Artist Information -->
+  <div id="sku-div"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+<script>
+
+
+var settings = {
+  async: true,
+  crossDomain: true,
+  url: "http://kcc-epim-proxy-dev.us-e1.cloudhub.io/query?SKU=123",
+  method: "GET",
+  headers: {
+    client_id: "c343c8e7ac1c462cb0f9c215daa0e4f5",
+    client_secret: "74342f65b2B54de49ca730d7A25B8323",
+    ["Cache-Control"]: "no-cache",
+    ["Postman-Token"]: "dc5e7065-8e57-4fdc-a219-e700896ac46d"
+  }
+}
+
+// $.ajax(settings).done(function (response) {
+//   console.log(response);
+// });
+
+$("#skubttn").on("click", function(event) {
+
+    event.preventDefault();
+
+    $.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+})
+
+</script>
+
+
+
+</body>

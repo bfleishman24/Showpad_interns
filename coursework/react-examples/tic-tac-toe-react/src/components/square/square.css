@@ -1,0 +1,10 @@
+.square {
+    width: 100px;
+    height: 100px;
+    border: solid 1px red;
+    float: left;
+}
+
+.clicked {
+    background-color: grey;
+}
